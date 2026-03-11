@@ -21,8 +21,9 @@ Tasks are stored in-memory (no database).
 
 ------------------------------------------------------------------------
 
-# Project Structure
+## Project Structure
 
+```
 anra_assessment
 ├── cmd/server/main.go      # Application entry point
 ├── internal
@@ -33,6 +34,7 @@ anra_assessment
 ├── tests                   # API tests
 ├── go.mod
 └── README.md
+```
 
 ------------------------------------------------------------------------
 
@@ -102,11 +104,11 @@ Example response:
 
 200 OK
 ```
-\[ { "id": "uuid", "title": "Learn Go", "status": "todo" }\]
+[ { "id": "uuid", "title": "Learn Go", "status": "todo" }]
 ```
 If no tasks exist the API returns:
 ```
-\[\]
+[]
 ```
 ------------------------------------------------------------------------
 
