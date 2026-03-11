@@ -54,8 +54,9 @@ Clone the repository:
 ```
 git clone https://github.com/iabdulzahid/anra_assessment.git 
 ```
+```
 cd anra_assessment
-
+```
 Run the server:
 ```
 go run cmd/server/main.go
@@ -77,16 +78,38 @@ PORT=8080 go run cmd/server/main.go
 POST /tasks
 
 Example request:
-```
-curl -X POST http://localhost:9090/tasks\
--H "Content-Type: application/json"\
--d '{"title":"Learn Go"}'
-```
-Example response:
 
+With status:
+```
+curl -X POST http://localhost:9090/tasks \
+-H "Content-Type: application/json" \
+-d '{"title":"Test","status":"done"}'
+```
+Response:
 201 Created
 ```
-{ "id": "uuid", "title": "Learn Go", "status": "todo" }
+{
+  "id": "uuid",
+  "title": "Test",
+  "status": "done"
+}
+```
+
+Without status:
+Request:
+```
+curl -X POST http://localhost:9090/tasks \
+-H "Content-Type: application/json" \
+-d '{"title":"Test"}'
+```
+Response:
+201 Created
+```
+{
+  "id": "uuid",
+  "title": "Test",
+  "status": "todo"
+}
 ```
 If `status` is omitted it defaults to `todo`.
 
