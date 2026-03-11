@@ -41,30 +41,31 @@ anra_assessment
 Install Go 1.21+
 
 Check version:
-
-`go version
-
+```
+go version
+```
 ------------------------------------------------------------------------
 
 # Running the Service
 
 Clone the repository:
-
-git clone https://github.com/iabdulzahid/anra_assessment.git cd
-anra_assessment
+```
+git clone https://github.com/iabdulzahid/anra_assessment.git 
+```
+cd anra_assessment
 
 Run the server:
-
+```
 go run cmd/server/main.go
-
+```
 Server starts on:
-
+```
 http://localhost:9090
-
+```
 You can also specify a custom port:
-
+```
 PORT=8080 go run cmd/server/main.go
-
+```
 ------------------------------------------------------------------------
 
 # API Endpoints
@@ -74,17 +75,17 @@ PORT=8080 go run cmd/server/main.go
 POST /tasks
 
 Example request:
-
+```
 curl -X POST http://localhost:9090/tasks\
 -H "Content-Type: application/json"\
 -d '{"title":"Learn Go"}'
-
+```
 Example response:
 
 201 Created
-
+```
 { "id": "uuid", "title": "Learn Go", "status": "todo" }
-
+```
 If `status` is omitted it defaults to `todo`.
 
 ------------------------------------------------------------------------
@@ -94,27 +95,27 @@ If `status` is omitted it defaults to `todo`.
 GET /tasks
 
 Example request:
-
+```
 curl http://localhost:9090/tasks
-
+```
 Example response:
 
 200 OK
-
+```
 \[ { "id": "uuid", "title": "Learn Go", "status": "todo" }\]
-
+```
 If no tasks exist the API returns:
-
+```
 \[\]
-
+```
 ------------------------------------------------------------------------
 
 # Running Tests
 
 Run tests:
-
+```
 go test ./...
-
+```
 Tests use Go's `httptest` package with a table-driven testing approach.
 
 ------------------------------------------------------------------------
